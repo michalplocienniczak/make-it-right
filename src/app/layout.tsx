@@ -1,9 +1,13 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import localFont from 'next/font/local'
 import './globals.css'
 import AuthProvider from '@/auth/Provider'
 
-const inter = Inter({ subsets: ['latin'] })
+const myFont = localFont({
+  src: './Minecraftia.woff',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -17,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={myFont.className}>
         <AuthProvider>{children}</AuthProvider>
       </body>
     </html>
