@@ -4,7 +4,7 @@ import json
 def main():
     
     url = "https://api.openai.com/v1/chat/completions"
-    api_key = "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"
+    api_key = "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"
     headers = {
         "Authorization": f"Bearer {api_key}",
         "Content-Type": "application/json"
