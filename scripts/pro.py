@@ -16,7 +16,6 @@ for file_name in files_to_move:
     org_path = os.path.join(org_folder, file_name)
     new_path = os.path.join(new_folder, file_name)
     
-    # Sprawdzenie, czy plik istnieje w folderze źródłowym
     if os.path.exists(org_path):
         # Przenoszenie pliku
         shutil.move(org_path, new_path)
