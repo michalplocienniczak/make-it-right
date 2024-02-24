@@ -1,0 +1,14 @@
+{
+    "items": [
+        {
+            "name": "stone",
+            "quantity": 21,
+            "location": 3
+        },
+        {
+            "name": "stick",
+            "quantity": 37,
+            "location": 2
+        }
+    ]
+}
