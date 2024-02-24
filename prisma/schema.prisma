@@ -54,3 +54,11 @@ model VerificationToken {
 
   @@unique([identifier, token])
 }
+
+model ItemType {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  name      String
+  key       String @unique
+  createdAt DateTime @default(now())
+  image     String
+}

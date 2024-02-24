@@ -19,10 +19,6 @@
 body {
   color: rgb(var(--foreground-rgb));
   background-image: url('/dirt-background.webp');
-
-  .ant-dropdown {
-    font-family: var(--font) !important;
-  }
 }
 
 @layer utilities {
