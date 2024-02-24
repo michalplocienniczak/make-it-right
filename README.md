@@ -3,7 +3,7 @@
 
 ## DEMO
 
-Try it! make-it-right.vercel.app/itemtypes
+[Try it! (https://make-it-right.vercel.app/)](https://make-it-right.vercel.app/)
 
 ## Description
 
