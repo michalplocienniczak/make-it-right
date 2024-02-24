@@ -1,4 +1,19 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+# Steventory - Minecraft Resource Management
+
+## DEMO
+
+Try it! make-it-right.vercel.app/itemtypes
+
+## Description
+
+Steventory is an application designed to significantly enhance the way Minecraft players manage their resources. It empowers both beginners and advanced players to effortlessly organize their inventory and storage chests. This app enables a quick assessment of the missing materials needed to craft desired items and tools, facilitating the achievement of in-game goals
+
+## Features
+
+- **Inventory Organization**: Quickly sort and manage your inventory to always have the necessary items at your disposal.
+- **Missing Materials Analysis**: Steventory will show you which materials you are missing to create your dream items.
+- **Simple and Intuitive Interface**: Even the least experienced Steve will find the app easy to use!
 
 ## Getting Started
 
@@ -18,19 +33,19 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+## Tips
 
-To learn more about Next.js, take a look at the following resources:
+- Use the inventory sorting feature to quickly find the items you need.
+- Regularly check which materials you need for your planned items to efficiently plan your adventures.
+- Leverage Steventory's capabilities to manage resources in multiplayer worlds, sharing resources with other players.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Support
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+If you encounter any issues or have questions about the Steventory app, please visit our support forum or contact us directly through the app's help option.
 
-## Deploy on Vercel
+## About the Author
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Steventory is a project that was created during the hackathon!
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Made with ♥ by Michał Amelia and Piotrek
