@@ -58,7 +58,30 @@ model VerificationToken {
 model ItemType {
   id        String   @id @default(auto()) @map("_id") @db.ObjectId
   name      String
-  key       String @unique
+  key       String   @unique
   createdAt DateTime @default(now())
   image     String
+  items     Item[]
+}
+
+model Location {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  name        String
+  x           Float
+  y           Float
+  z           Float
+  createdAt   DateTime @default(now())
+  description String?
+  image       String?
+  items       Item[]
+}
+
+model Item {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  quantity   Int
+  createdAt  DateTime @default(now())
+  typeId     String   @db.ObjectId
+  type       ItemType @relation(fields: [typeId], references: [id])
+  locationId String   @db.ObjectId
+  location   Location @relation(fields: [locationId], references: [id])
 }
