@@ -2,7 +2,7 @@ import { PrismaAdapter } from '@next-auth/prisma-adapter'
 import EmailProvider, {
   SendVerificationRequestParams,
 } from 'next-auth/providers/email'
-import prisma from '@/prisma/client'
+import prisma from '@@/prisma/client'
 import { NextAuthOptions } from 'next-auth'
 import { MailerSend, EmailParams } from 'mailersend'
 import { basicTheme } from '@/theme'
