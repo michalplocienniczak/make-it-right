@@ -18,11 +18,15 @@ const MenuModal = ({ open, onClose }: MenuModalProps) => {
       centered={true}
       modalRender={(modal) => <div className="modal-wrapper">{modal}</div>}
     >
-      <Link href="/" className={btnStyles.mcButton}>
+      <Link href="/" className={btnStyles.mcButton} onClick={() => onClose()}>
         Home
       </Link>
-      <Link href="/admin-panel" className={btnStyles.mcButton}>
-        Admin Panel
+      <Link
+        href="/itemtypes"
+        className={btnStyles.mcButton}
+        onClick={() => onClose()}
+      >
+        Item Types
       </Link>
       <button
         className={`${btnStyles.mcButton} mt-6`}

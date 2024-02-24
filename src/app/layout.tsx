@@ -5,6 +5,7 @@ import AuthProvider from '@/auth/Provider'
 import { ConfigProvider } from 'antd'
 import Navbar from '@/components/Navbar/Navbar'
 import mainStyles from '@/components/Main.module.scss'
+import QueryClientProvider from '@@/QueryClientProvider'
 
 const myFont = localFont({
   src: './Minecraftia.woff',
@@ -25,19 +26,21 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={myFont.className}>
-        <ConfigProvider
-          theme={{
-            token: {
-              fontFamily: myFont.style.fontFamily,
-              borderRadius: 0,
-            },
-          }}
-        >
-          <AuthProvider>
-            <Navbar />
-            <main className={mainStyles.main}>{children}</main>
-          </AuthProvider>
-        </ConfigProvider>
+        <QueryClientProvider>
+          <ConfigProvider
+            theme={{
+              token: {
+                fontFamily: myFont.style.fontFamily,
+                borderRadius: 0,
+              },
+            }}
+          >
+            <AuthProvider>
+              <Navbar />
+              <main className={mainStyles.main}>{children}</main>
+            </AuthProvider>
+          </ConfigProvider>
+        </QueryClientProvider>
       </body>
     </html>
   )

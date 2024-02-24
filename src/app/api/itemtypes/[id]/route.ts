@@ -24,7 +24,10 @@ export async function PATCH(
     return NextResponse.json('Item type not found', { status: 404 })
   }
 
-  const newItemType = await prisma.itemType.create({
+  const updatedItemType = await prisma.itemType.update({
+    where: {
+      id,
+    },
     data: {
       name: body.name,
       key: body.key,
@@ -32,7 +35,7 @@ export async function PATCH(
     },
   })
 
-  return NextResponse.json(newItemType, { status: 201 })
+  return NextResponse.json(updatedItemType, { status: 201 })
 }
 
 export async function DELETE(
