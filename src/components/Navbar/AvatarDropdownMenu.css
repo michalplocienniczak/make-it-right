@@ -1,0 +1,17 @@
+.avatar .ant-dropdown-menu {
+  background-color: #999 !important;
+  border: 2px solid black;
+  box-shadow: inset -2px -4px #0006, inset 2px 2px #fff7;
+  padding-bottom: 6px;
+}
+
+.avatar .ant-dropdown-menu .ant-dropdown-menu-item {
+  color: #ddd !important;
+  text-shadow: 2px 2px #000a;
+}
+
+.avatar .ant-dropdown-menu .ant-dropdown-menu-item:hover {
+  background-color: rgba(100, 100, 255, 0.45);
+  text-shadow: 2px 2px #202013cc;
+  color: #ffffa0 !important;
+}

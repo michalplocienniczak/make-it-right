@@ -4,6 +4,7 @@ import btnStyles from '@/components/ButtonStyle.module.scss'
 import Image from 'next/image'
 import Link from 'next/link'
 import AvatarDropdownMenu from './AvatarDropdownMenu'
+import './AvatarDropdownMenu.css'
 
 const Navbar = () => {
   return (
@@ -17,7 +18,7 @@ const Navbar = () => {
           height={70}
         />
       </Link>
-      <div>
+      <div className="avatar">
         <AvatarDropdownMenu />
       </div>
     </header>

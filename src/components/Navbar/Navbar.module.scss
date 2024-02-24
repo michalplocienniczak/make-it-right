@@ -1,9 +1,12 @@
 .navbar {
   width: 100%;
   max-width: 1024px;
+  align-self: center;
+  margin: auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   place-items: center;
+  margin-top: 20px;
   :first-child {
     justify-self: flex-start;
   }

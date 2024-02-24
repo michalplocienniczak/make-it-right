@@ -1,8 +1,10 @@
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
-import './globals.scss'
+import './globals.css'
 import AuthProvider from '@/auth/Provider'
 import { ConfigProvider } from 'antd'
+import Navbar from '@/components/Navbar/Navbar'
+import mainStyles from '@/components/Main.module.scss'
 
 const myFont = localFont({
   src: './Minecraftia.woff',
@@ -31,7 +33,10 @@ export default function RootLayout({
             },
           }}
         >
-          <AuthProvider>{children}</AuthProvider>
+          <AuthProvider>
+            <Navbar />
+            <main className={mainStyles.main}>{children}</main>
+          </AuthProvider>
         </ConfigProvider>
       </body>
     </html>
