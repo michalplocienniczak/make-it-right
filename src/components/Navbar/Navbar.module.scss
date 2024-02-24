@@ -1,0 +1,23 @@
+.navbar {
+  width: 100%;
+  max-width: 1024px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  place-items: center;
+  :first-child {
+    justify-self: flex-start;
+  }
+  :last-child {
+    justify-self: flex-end;
+  }
+}
+
+.logo {
+  display: grid;
+  place-items: flex-start;
+}
+
+.avatar {
+  display: grid;
+  place-items: flex-end;
+}

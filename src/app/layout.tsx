@@ -1,12 +1,13 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import localFont from 'next/font/local'
-import './globals.css'
+import './globals.scss'
 import AuthProvider from '@/auth/Provider'
+import { ConfigProvider } from 'antd'
 
 const myFont = localFont({
   src: './Minecraftia.woff',
   display: 'swap',
+  variable: '--font',
 })
 
 export const metadata: Metadata = {
@@ -22,7 +23,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={myFont.className}>
-        <AuthProvider>{children}</AuthProvider>
+        <ConfigProvider
+          theme={{
+            token: {
+              fontFamily: myFont.style.fontFamily,
+              borderRadius: 0,
+            },
+          }}
+        >
+          <AuthProvider>{children}</AuthProvider>
+        </ConfigProvider>
       </body>
     </html>
   )

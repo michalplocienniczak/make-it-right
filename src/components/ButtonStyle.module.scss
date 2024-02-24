@@ -1,0 +1,33 @@
+.mcButton {
+  min-height: 16px;
+  height: fit-content;
+  padding: 8px 20px;
+  padding-bottom: 12px;
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  user-select: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #999;
+  image-rendering: pixelated;
+  border: 2px solid #000;
+  line-height: 14px;
+
+  color: #ddd;
+  text-shadow: 2px 2px #000a;
+  box-shadow: inset -2px -4px #0006, inset 2px 2px #fff7;
+
+  /* Mouse over */
+  &:hover {
+    background-color: rgba(100, 100, 255, 0.45);
+    text-shadow: 2px 2px #202013cc;
+    color: #ffffa0;
+  }
+  &:active {
+    box-shadow: inset -2px -4px #0004, inset 2px 2px #fff5;
+  }
+}
