@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 export default async function Home() {
   const session = await getServerSession(authOptions)
-  
+
   return (
     <div>
       <div className={styles.imageContainer}>
@@ -23,7 +23,7 @@ export default async function Home() {
       </div>
 
       <p className={styles.bottomLeft}>Steventory 1.21.37</p>
-      <p className={styles.bottomRight}>Copyright make-it-right.</p>
+      <p className={styles.bottomRight}>Made with ♥ by make-it-right.</p>
     </div>
   );
 }
