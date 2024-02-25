@@ -90,7 +90,7 @@ const ItemTypesTable = () => {
 
   return (
     <>
-      <div className="flex place-items-center justify-between mb-8">
+      <div className="flex place-items-center justify-between my-6">
         <h1 className="text-xl">Item Types</h1>
         <button className={btnStyles.mcButton} onClick={() => setOpen(true)}>
           Add Item Type

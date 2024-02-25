@@ -26,9 +26,9 @@ const LocationPage = ({ params: { id } }: { params: { id: string } }) => {
 
   return (
     <>
-      <section className="flex place-items-start justify-between">
+      <section className="flex place-items-start justify-stretch flex-col sm:flex-row sm:justify-between gap-2 mt-8">
         <LocationsCard location={data} />
-        <div className="flex place-items-end justify-end flex-col">
+        <div className="flex place-items-stretch sm:place-items-end justify-end flex-col w-full sm:w-auto gap-2">
           <AddLocation location={data} onSuccess={() => refetch()} />
           <Popconfirm
             title="Are you sure you want to delete this location?"
@@ -52,10 +52,12 @@ const LocationPage = ({ params: { id } }: { params: { id: string } }) => {
           </Popconfirm>
         </div>
       </section>
-      <section className="mb-6">
-        <div className="flex place-items-center justify-between">
-          <h2>Manage items within location inventory</h2>
-          <div className="flex place-items-end justify-end gap-2 flex-col">
+      <section className="my-6">
+        <div className="flex place-items-center justify-between w-full sm:w-auto flex-col sm:flex-row">
+          <h2 className="my-6 text-center sm:text-left">
+            Manage items within location inventory
+          </h2>
+          <div className="flex place-items-stretch sm:place-items-end justify-end gap-2 flex-col  w-full sm:w-auto">
             <ChangeButton
               isAdd
               id={id}

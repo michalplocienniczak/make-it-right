@@ -1,5 +1,6 @@
+'use client'
 import { useAICraftingAction } from '@/hooks/ai/useAICraftingAction'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import '@/components/Locations/locationCard.css'
 import { AIResponse } from '@/types/AIResponse'
 import { Card } from 'antd'
@@ -11,11 +12,29 @@ import { CldImage } from 'next-cloudinary'
 const AICrafting = () => {
   const { data, isPending } = useAICraftingAction()
   const { data: itemTypes } = useGetItemTypesAction()
-  const { data: locations } = useGetLocationsAction()
+  const { data: locations } = useGetLocationsAction({ token: '' })
+
+  const [counter, setCounter] = useState(0)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCounter((prevCount) => prevCount + 1)
+    }, 500)
+
+    return () => clearInterval(timer)
+  }, [])
 
   const crafting = data as AIResponse
 
-  if (isPending) return <div>Loading AI generated craftings...</div>
+  if (isPending)
+    return (
+      <>
+        <div>Loading AI generated craftings...</div>
+        {counter >= 5 && <div>It takes some time...</div>}
+        {counter >= 10 && <div>Maybe now?...</div>}
+        {counter >= 15 && <div>AI...</div>}
+      </>
+    )
 
   const getType = (type: string) => {
     const itemType = itemTypes?.find(

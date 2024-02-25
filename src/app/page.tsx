@@ -9,9 +9,13 @@ import LocationsCardGrid from '@/components/Locations/LocationsCardGrid'
 import { useGetLocationsAction } from '@/hooks/locations/useGetLocationsAction'
 import AICrafting from '@/components/AICrafting/AICrafting'
 
+export const dynamic = 'force-dynamic'
+
 export default function Home() {
-  const { status } = useSession()
-  const { data, refetch } = useGetLocationsAction()
+  const { status, data: sessionData } = useSession()
+  const { data, refetch } = useGetLocationsAction({
+    token: sessionData?.expires || '',
+  })
 
   if (status === 'loading')
     return <div className="w-full py-3 text-center">Loading...</div>
@@ -44,12 +48,11 @@ export default function Home() {
 
   return (
     <>
-      <div className="flex place-items-center justify-between my-3">
+      <div className="flex place-items-center justify-between my-6">
         <h1>Hello Steve&apos;s Friend!</h1>
         <AddLocation onSuccess={() => refetch()} />
       </div>
       <LocationsCardGrid locations={data} />
-      <AICrafting />
     </>
   )
 }

@@ -13,7 +13,7 @@ type LocationsCardProps = {
 
 const LocationsCard = ({ location }: LocationsCardProps) => {
   return (
-    <Link href={`/locations/${location?.id}`}>
+    <Link href={`/locations/${location?.id}`} className="w-full sm:w-auto">
       <Card>
         <div className="flex w-full place-items-start gap-3">
           {location?.image ? (

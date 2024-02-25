@@ -28,6 +28,13 @@ const MenuModal = ({ open, onClose }: MenuModalProps) => {
       >
         Item Types
       </Link>
+      <Link
+        href="/crafts"
+        className={btnStyles.mcButton}
+        onClick={() => onClose()}
+      >
+        Possible Crafts
+      </Link>
       <button
         className={`${btnStyles.mcButton} mt-6`}
         onClick={() => onClose()}
