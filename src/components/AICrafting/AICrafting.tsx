@@ -8,9 +8,11 @@ import { useGetItemTypesAction } from '@/hooks/itemTypes/useGetItemTypesAction'
 import { useGetLocationsAction } from '@/hooks/locations/useGetLocationsAction'
 import { ItemType, Location } from '@prisma/client'
 import { CldImage } from 'next-cloudinary'
+import btnStyles from '@/components/ButtonStyle.module.scss'
 
 const AICrafting = () => {
-  const { data, isPending } = useAICraftingAction()
+  const { data, isPending, isFetching, isLoading, refetch } =
+    useAICraftingAction()
   const { data: itemTypes } = useGetItemTypesAction()
   const { data: locations } = useGetLocationsAction({ token: '' })
 
@@ -26,7 +28,7 @@ const AICrafting = () => {
 
   const crafting = data as AIResponse
 
-  if (isPending)
+  if (isPending || isFetching || isLoading)
     return (
       <>
         <div>Loading AI generated craftings...</div>
@@ -52,7 +54,18 @@ const AICrafting = () => {
 
   return (
     <section className="mt-6">
-      <h1 className="mb-6">AI Generated Craftings</h1>
+      <div className="flex justify-between place-items-center">
+        <h1 className="mb-6">AI Generated Craftings</h1>
+        <button
+          className={btnStyles.mcButton}
+          onClick={() => {
+            setCounter(0)
+            refetch()
+          }}
+        >
+          Reload
+        </button>
+      </div>
       <div className="flex flex-col gap-2 mb-6">
         {crafting?.advices.map((advice) => (
           <Card key={advice.name}>
