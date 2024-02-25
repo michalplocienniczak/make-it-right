@@ -56,8 +56,17 @@ const LocationPage = ({ params: { id } }: { params: { id: string } }) => {
         <div className="flex place-items-center justify-between">
           <h2>Manage items within location inventory</h2>
           <div className="flex place-items-end justify-end gap-2 flex-col">
-            <ChangeButton isAdd id={id} onSuccess={() => refetchItems()} />
-            <ChangeButton id={id} onSuccess={() => refetchItems()} />
+            <ChangeButton
+              isAdd
+              id={id}
+              onSuccess={() => refetchItems()}
+              location={data}
+            />
+            <ChangeButton
+              id={id}
+              onSuccess={() => refetchItems()}
+              location={data}
+            />
           </div>
         </div>
       </section>

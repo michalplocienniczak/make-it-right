@@ -6,7 +6,7 @@ import { Formik } from 'formik'
 import { AppForm, AppInputNumber, AppSelect } from '../AppComponents'
 import { useGetItemTypesAction } from '@/hooks/itemTypes/useGetItemTypesAction'
 import { CldImage } from 'next-cloudinary'
-import { ItemType } from '@prisma/client'
+import { Item, ItemType } from '@prisma/client'
 import { usePostAddItemsAction } from '@/hooks/locationItems/usePostAddItemsAction'
 import { usePostSubstractItemsAction } from '@/hooks/locationItems/usePostSubstractItemsAction'
 
@@ -14,6 +14,7 @@ type ChangeButtonProps = {
   onSuccess: () => void
   id: string
   isAdd?: boolean
+  location: Location & { items: Item[] }
 }
 
 type QuantityChage = {
@@ -21,7 +22,12 @@ type QuantityChage = {
   typeId: string
 }
 
-const ChangeButton = ({ isAdd = false, onSuccess, id }: ChangeButtonProps) => {
+const ChangeButton = ({
+  isAdd = false,
+  onSuccess,
+  id,
+  location,
+}: ChangeButtonProps) => {
   const [open, setOpen] = useState(false)
 
   const { data: itemTypes } = useGetItemTypesAction()
@@ -29,7 +35,13 @@ const ChangeButton = ({ isAdd = false, onSuccess, id }: ChangeButtonProps) => {
   const { mutate: add } = usePostAddItemsAction({ id })
   const { mutate: remove } = usePostSubstractItemsAction({ id })
 
-  const options = itemTypes?.map((item: ItemType) => {
+  const locationItemsIds = location?.items.map((item) => item.typeId)
+
+  const selectedItemTypes = isAdd
+    ? itemTypes
+    : itemTypes?.filter((item: ItemType) => locationItemsIds?.includes(item.id))
+
+  const options = selectedItemTypes?.map((item: ItemType) => {
     return {
       label: (
         <div className="flex place-items-center gap-1">
@@ -78,6 +90,11 @@ const ChangeButton = ({ isAdd = false, onSuccess, id }: ChangeButtonProps) => {
     setOpen(false)
   }
 
+  const getMin = (typeId: string) => {
+    const item = location.items.find((item) => item.typeId === typeId)
+    return item?.quantity || 0
+  }
+
   const title = isAdd ? 'Add' : 'Remove'
 
   return (
@@ -94,7 +111,7 @@ const ChangeButton = ({ isAdd = false, onSuccess, id }: ChangeButtonProps) => {
       >
         <Formik<QuantityChage>
           initialValues={{
-            quantity: 0,
+            quantity: 1,
             typeId: '',
           }}
           onSubmit={handleSubmit}
@@ -116,6 +133,8 @@ const ChangeButton = ({ isAdd = false, onSuccess, id }: ChangeButtonProps) => {
                     name="quantity"
                     labelProps={{ label: 'Quantity' }}
                     placeholder="Enter Quantity"
+                    min={1}
+                    max={isAdd ? undefined : getMin(values.typeId)}
                   />
                   <button
                     type="submit"
