@@ -20,9 +20,9 @@
 }
 
 .ant-pagination .ant-pagination-item {
-  color: white;
+  color: white !important;
 }
 
 .ant-pagination-item-ellipsis {
-  color: wheat;
+  color: white !important;
 }
