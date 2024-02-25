@@ -1,5 +1,6 @@
 .modal-wrapper .ant-modal-content {
   background-color: transparent;
+  box-shadow: none !important;
 }
 
 .modal-wrapper .ant-modal-close {
