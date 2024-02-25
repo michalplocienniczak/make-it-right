@@ -7,12 +7,11 @@ import { useSession } from 'next-auth/react'
 import AddLocation from '@/components/Locations/AddLocation'
 import LocationsCardGrid from '@/components/Locations/LocationsCardGrid'
 import { useGetLocationsAction } from '@/hooks/locations/useGetLocationsAction'
+import AICrafting from '@/components/AICrafting/AICrafting'
 
 export default function Home() {
   const { status } = useSession()
   const { data, refetch } = useGetLocationsAction()
-
-  console.log(data)
 
   if (status === 'loading')
     return <div className="w-full py-3 text-center">Loading...</div>
@@ -50,6 +49,7 @@ export default function Home() {
         <AddLocation onSuccess={() => refetch()} />
       </div>
       <LocationsCardGrid locations={data} />
+      <AICrafting />
     </>
   )
 }

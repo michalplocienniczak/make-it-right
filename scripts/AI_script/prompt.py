@@ -368,8 +368,11 @@ def main():
 
                 RETURN JSON only, no introduction or ending.
 
+                
+
                 export type Ret = [
                     possibility: bool
+                    comment: string
                     advices: Advice[]
                 ]
 
@@ -380,7 +383,7 @@ def main():
 
                 export type Item = [
                     name: string
-                    location: number
+                    location: string
                     necessary_quantity: number
                 ]
                 """
