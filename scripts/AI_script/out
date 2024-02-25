@@ -1,0 +1,43 @@
+[
+    {
+        "possibility": true,
+        "advices": [
+            {
+                "name": "Craft Wooden Hoe",
+                "items": [
+                    {
+                        "name": "Acacia Planks",
+                        "location": "65da87d6117a3589e78cde6b",
+                        "necessary_quantity": 2
+                    },
+                    {
+                        "name": "Stick",
+                        "location": "65da87d6117a3589e78cde6b",
+                        "necessary_quantity": 2
+                    }
+                ]
+            },
+            {
+                "name": "Craft Wooden Stairs",
+                "items": [
+                    {
+                        "name": "Acacia Planks",
+                        "location": "65da87d6117a3589e78cde6b",
+                        "necessary_quantity": 6
+                    }
+                ]
+            },
+            {
+                "name": "Craft Wooden Slab",
+                "items": [
+                    {
+                        "name": "Acacia Planks",
+                        "location": "65da87d6117a3589e78cde6b",
+                        "necessary_quantity": 3
+                    }
+                ]
+            }
+        ]
+    }
+]
+
