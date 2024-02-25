@@ -149,7 +149,7 @@ const LocationForm = ({
                 >
                   {({ open }) =>
                     values.image ? (
-                      <div className="flex place-items-center gap-2">
+                      <div className="flex place-items-center gap-2 mb-6">
                         <Tooltip title="Change image">
                           <CldImage
                             src={values.image}
@@ -166,11 +166,14 @@ const LocationForm = ({
                                 },
                               },
                             }}
-                            className="mb-6 cursor-pointer"
+                            className="cursor-pointer"
                           />
                         </Tooltip>
+
                         <MdDelete
                           onClick={() => setFieldValue('image', null)}
+                          size={25}
+                          className="cursor-pointer"
                         />
                       </div>
                     ) : (

@@ -74,6 +74,12 @@ const ItemTypesTable = () => {
             }
             okText="Yes"
             cancelText="No"
+            okButtonProps={{
+              className: btnStyles.mcButton,
+            }}
+            cancelButtonProps={{
+              className: btnStyles.mcButton,
+            }}
           >
             <button className={btnStyles.mcButton}>Delete</button>
           </Popconfirm>

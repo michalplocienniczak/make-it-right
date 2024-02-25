@@ -1,3 +1,4 @@
+'use client'
 import { Location } from '@prisma/client'
 import { Card } from 'antd'
 import { CldImage } from 'next-cloudinary'
@@ -12,10 +13,10 @@ type LocationsCardProps = {
 
 const LocationsCard = ({ location }: LocationsCardProps) => {
   return (
-    <Link href={`/locations/${location.id}`}>
+    <Link href={`/locations/${location?.id}`}>
       <Card>
         <div className="flex w-full place-items-start gap-3">
-          {location.image ? (
+          {location?.image ? (
             <CldImage
               src={location.image}
               alt="Location Image"
@@ -40,9 +41,9 @@ const LocationsCard = ({ location }: LocationsCardProps) => {
             />
           )}
           <div className="flex flex-col gap-2">
-            <h2>{location.name}</h2>
+            <h2>{location?.name}</h2>
             <p>
-              x: {location.x}, y: {location.y}, z: {location.z}
+              x: {location?.x}, y: {location?.y}, z: {location?.z}
             </p>
           </div>
         </div>

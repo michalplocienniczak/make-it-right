@@ -19,6 +19,9 @@ export async function GET(
     where: {
       locationId: id,
     },
+    include: {
+      type: true,
+    },
   })
 
   return NextResponse.json(items, { status: 200 })

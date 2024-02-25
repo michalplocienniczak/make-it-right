@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import btnStyles from '@/components/ButtonStyle.module.scss'
 import LocationForm from './LocationForm'
+import { Location } from '@prisma/client'
 
 type AddLocationProps = {
+  location?: Location
   onSuccess?: () => void
 }
 
-const AddLocation = ({ onSuccess }: AddLocationProps) => {
+const AddLocation = ({ onSuccess, location }: AddLocationProps) => {
   const [open, setOpen] = useState(false)
 
   return (
@@ -14,10 +16,11 @@ const AddLocation = ({ onSuccess }: AddLocationProps) => {
       <LocationForm
         open={open}
         onClose={() => setOpen(false)}
+        location={location}
         onSuccess={onSuccess}
       />
       <div className={btnStyles.mcButton} onClick={() => setOpen(true)}>
-        Add New Location
+        {location ? 'Edit Location' : 'Add New Location'}
       </div>
     </>
   )

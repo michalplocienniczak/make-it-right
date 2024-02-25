@@ -9,7 +9,7 @@ type UsePatchLocationActionProps = {
 export const usePatchLocationAction = ({ id }: UsePatchLocationActionProps) => {
   return useMutation({
     mutationFn: async (itemType: Partial<Location>) => {
-      const repsonse = await axios.patch(`/api/location/${id}`, itemType)
+      const repsonse = await axios.patch(`/api/locations/${id}`, itemType)
 
       return repsonse.data
     },
