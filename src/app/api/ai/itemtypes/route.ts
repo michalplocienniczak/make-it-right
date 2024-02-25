@@ -1,0 +1,13 @@
+import { NextRequest, NextResponse } from 'next/server'
+import prisma from '@@/prisma/client'
+
+export async function GET(request: NextRequest) {
+  const items = await prisma.itemType.findMany({
+    select: {
+      id: true,
+      key: true,
+    },
+  })
+
+  return NextResponse.json(items, { status: 200 })
+}
