@@ -71,6 +71,9 @@ export async function GET(
     where: {
       id,
     },
+    include: {
+      items: true,
+    },
   })
 
   if (!location) {
