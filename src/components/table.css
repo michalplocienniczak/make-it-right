@@ -26,3 +26,7 @@
 .ant-pagination-item-ellipsis {
   color: white !important;
 }
+
+.ant-pagination .ant-pagination-item-active {
+  background-color: #919191 !important;
+}
