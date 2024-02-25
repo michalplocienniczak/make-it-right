@@ -33,7 +33,6 @@ export async function PATCH(
       x: body.x,
       y: body.y,
       z: body.z,
-      description: body.description,
       image: body.image,
     },
   })

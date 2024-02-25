@@ -5,7 +5,9 @@ import axios from 'axios'
 export const usePostItemTypeAction = () => {
   return useMutation({
     mutationFn: async (itemType: Pick<ItemType, 'key' | 'name' | 'image'>) => {
-      axios.post(`/api/itemtypes/`, itemType)
+      const response = await axios.post(`/api/itemtypes/`, itemType)
+
+      return response.data
     },
   })
 }

@@ -24,7 +24,6 @@ export async function POST(request: NextRequest) {
       x: body.x,
       y: body.y,
       z: body.z,
-      description: body.description,
     },
   })
 

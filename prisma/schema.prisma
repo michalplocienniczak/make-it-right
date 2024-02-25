@@ -65,15 +65,14 @@ model ItemType {
 }
 
 model Location {
-  id          String   @id @default(auto()) @map("_id") @db.ObjectId
-  name        String
-  x           Float
-  y           Float
-  z           Float
-  createdAt   DateTime @default(now())
-  description String?
-  image       String?
-  items       Item[]
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  name      String
+  x         Float
+  y         Float
+  z         Float
+  createdAt DateTime @default(now())
+  image     String?
+  items     Item[]
 }
 
 model Item {

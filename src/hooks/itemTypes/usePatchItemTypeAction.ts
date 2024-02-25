@@ -9,7 +9,9 @@ type UsePatchItemTypeActionProps = {
 export const usePatchItemTypeAction = ({ id }: UsePatchItemTypeActionProps) => {
   return useMutation({
     mutationFn: async (itemType: Partial<ItemType>) => {
-      axios.patch(`/api/itemtypes/${id}`, itemType)
+      const repsonse = await axios.patch(`/api/itemtypes/${id}`, itemType)
+
+      return repsonse.data
     },
   })
 }
