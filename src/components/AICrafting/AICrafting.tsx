@@ -46,25 +46,27 @@ const AICrafting = () => {
                 return (
                   <li key={item.name}>
                     <div className="whitespace-nowrap flex place-items-center gap-2">
-                      <CldImage
-                        src={type.image}
-                        alt="Item Type Image"
-                        width={20}
-                        height={20}
-                        config={{
-                          url: {
-                            queryParams: {
-                              q: 'auto',
-                              f: 'auto',
-                              fl: 'lossy',
+                      {type && type.image && (
+                        <CldImage
+                          src={type.image}
+                          alt="Item Type Image"
+                          width={20}
+                          height={20}
+                          config={{
+                            url: {
+                              queryParams: {
+                                q: 'auto',
+                                f: 'auto',
+                                fl: 'lossy',
+                              },
                             },
-                          },
-                        }}
-                      />{' '}
+                          }}
+                        />
+                      )}{' '}
                       <p>x {item.necessary_quantity}</p>
                     </div>{' '}
                     from location &quot;
-                    {location.name}&quot;
+                    {location && location.name ? location.name : ''}&quot;
                   </li>
                 )
               })}
