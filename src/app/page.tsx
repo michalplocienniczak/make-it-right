@@ -40,9 +40,10 @@ export default function Home() {
             Where Every Steve Finds Their Treasure!
           </p>
         </div>
-
-        <p className={styles.bottomLeft}>Steventory 1.21.37</p>
-        <p className={styles.bottomRight}>Copyright make-it-right.</p>
+        <div className={styles.footer}>
+          <p className={styles.bottomLeft}>Steventory 1.21.37</p>
+          <p className={styles.bottomRight}>Made with ♥ by make-it-right.</p>
+        </div>
       </div>
     )
 

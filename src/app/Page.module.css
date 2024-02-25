@@ -12,13 +12,17 @@
   font-size: 40px;
 }
 
-.bottomLeft {
+.footer {
+  font-size: 16px;
+}
+
+.footer .bottomLeft {
   position: absolute;
   bottom: 10px;
   left: 10px;
 }
 
-.bottomRight {
+.footer .bottomRight {
   position: absolute;
   bottom: 10px;
   right: 10px;
@@ -26,11 +30,26 @@
 
 .imageContainer {
   position: relative;
-  width: 100%;
+  width: 90%;
   height: 0;
   padding-top: 60%;
+  margin: auto;
 }
 
 .textImage {
   margin-top: 20%;
+}
+
+@media only screen and (max-width: 860px) {
+  .container .miniHeader {
+    font-size: 10px;
+  }
+  
+  .container .header {
+    font-size: 28px;
+  }
+
+  .footer {
+    font-size: 8px;
+  }
 }
